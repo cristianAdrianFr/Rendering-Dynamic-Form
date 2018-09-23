@@ -1,0 +1,19 @@
+.home-page {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.project-card-part {
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-card-part > div {
+    margin: 0 5px;
+}
+
+.project-card-part > div:hover {
+    cursor: pointer;
+    background-color: gray !important;
+}
