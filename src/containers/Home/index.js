@@ -1,60 +1,30 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import Home from '../../components/HomeComponent'
-import {
-    fetchUser,
-    selectedUserData,
-    saveProject,
-    removeProject,
-    userSetting
-} from '../../actions/Home';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import Home from '../../components/HomeComponent';
 
 class HomeContainer extends Component {
-    static propTypes = {
-        fetchUser: PropTypes.func,
-        selectedUserData: PropTypes.func,
-        saveProject: PropTypes.func,
-        removeProject: PropTypes.func,
-        userSetting: PropTypes.func,
-    };
 
-    render () {
-        return (
-            <div className={'home-container'}>
-                <Home {...this.props} />
-            </div>
-        )
-    }
+  componentWillMount() {
+    const {history} = this.props;
+    history.push('/users')
+  }
+
+  render() {
+    return (
+      <div className={'home-container'}>
+        <Home />
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = (state, ownProps) => {
-    return {
-        userData: state.home.userData,
-        wholeProjects: state.home.wholeProjects,
-        userId: state.home.userId,
-        pending: state.home.pending
-    }
+  return {}
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-    return {
-        fetchUser: (userData) => {
-            dispatch(fetchUser(userData));
-        },
-        selectedUserData: (userName, index) => {
-            dispatch(selectedUserData(userName, index));
-        },
-        saveProject: (role, order, id) => {
-            dispatch(saveProject(role, order, id));
-        },
-        removeProject: (role, order, id) => {
-            dispatch(removeProject(role, order, id));
-        },
-        userSetting: data => {
-            dispatch(userSetting(data))
-        }
-    }
+  return {}
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer))

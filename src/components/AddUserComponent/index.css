@@ -1,0 +1,114 @@
+.add-user-page {
+  margin-top: 50px;
+}
+
+.add-user-page .add-user-title p {
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.add-user-page form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.add-user-page form label {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.add-user-page form .username {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.add-user-page form .username input {
+  width: 60%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.add-user-page form .email {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.add-user-page form .email input {
+  width: 60%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.add-user-page form .age {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.add-user-page form .age input {
+  width: 60%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.add-user-page form .description {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.add-user-page form .description textarea {
+  width: 60%;
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.add-user-page form .gender {
+  display: flex;
+  margin: 10px 0;
+}
+
+.add-user-page form .gender > div:nth-child(2) {
+  margin-left: 40px;
+}
+
+.add-user-page form .skill {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.add-user-page form .experience {
+  margin: 10px 0;
+}
+
+.add-user-page form .field {
+  margin: 10px 0;
+}
+
+.add-user-page form .photo {
+  margin: 10px 0;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.add-user-page form button {
+  height: 50px;
+  border-radius: 5px;
+  font-size: 25px;
+  background-color: black;
+  color: white;
+}
+
+.add-user-page form .error-message {
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: red;
+}

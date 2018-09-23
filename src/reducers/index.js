@@ -1,8 +1,10 @@
-import { combineReducers } from 'redux';
+import {combineReducers} from 'redux';
 import HomePageReducer from './Home';
+import UesrsPageReducer from './Users';
 
 const RootReducer = combineReducers({
-    home: HomePageReducer
+  home: HomePageReducer,
+  users: UesrsPageReducer
 });
 
 export default RootReducer;
