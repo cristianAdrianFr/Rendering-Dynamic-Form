@@ -26,7 +26,12 @@ class CandleStickChart extends React.Component {
           high: this.props.data.high[key],
           low: this.props.data.low[key],
           open: this.props.data.open[key],
-          date: this.props.data.ts[key]
+          date: this.props.data.ts[key],
+          percentChange: undefined,
+          absoluteChange: undefined,
+          volume: 38409100,
+          split: '',
+          dividend: ''
         }
       });
       this.setState({ chartData })
@@ -36,7 +41,7 @@ class CandleStickChart extends React.Component {
   render() {
     const { chartData } = this.state;
     const xAccessor = d => {
-      return d.date
+      return d && d.date
     };
     const xExtents = [
       xAccessor(last(chartData)),
@@ -50,7 +55,7 @@ class CandleStickChart extends React.Component {
         margin={{ left: 50, right: 50, top: 10, bottom: 30 }}
         type={'hybrid'}
         seriesName="MSFT"
-        data={chartData.length > 0 && chartData}
+        data={chartData}
         xAccessor={xAccessor}
         xScale={scaleTime()}
         xExtents={xExtents}
