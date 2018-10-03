@@ -21,6 +21,7 @@ class CandleStickContainer extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
+    data: state.candleStick.chartData
   }
 };
 

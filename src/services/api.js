@@ -18,7 +18,6 @@ export const loginService = (data) => {
 };
 
 export const getCandleStickDataService = () => {
-  console.log('#########', localStorage.getItem('auth_token'));
   return fetch(`${API_HOST}/sys/backtests/6315/charts`, {
     method: 'GET',
     headers: {
