@@ -1,64 +1,35 @@
 const API_HOST = process.env.REACT_APP_API_HOST;
 
-export const getUserListService = () => {
-  return fetch(`${API_HOST}/v1/users`, {
-    method: 'GET',
+export const loginService = (data) => {
+  return fetch(`${API_HOST}/auth/obtain-token`, {
+    method: 'POST',
     headers: {
       'Accept': '*/*',
       'Content-Type': 'application/json'
-    }
+    },
+    body: JSON.stringify({...data})
   })
-    .then(response => response.json())
+    .then(response => {
+      return response.json();
+    })
     .catch(error => {
       throw (error);
     })
 };
 
-export const uploadPhotoService = () => {
-  return fetch(``, {
-    method: '',
-    headers: {
-    }
-  })
-    .then(response => response.json())
-    .catch(error => {
-      throw (error);
-    })
-};
-
-export const searchUsersService = (searchText) => {
-  return fetch(`${API_HOST}/v1/users/?q=${searchText}`, {
+export const getCandleStickDataService = () => {
+  console.log('#########', localStorage.getItem('auth_token'));
+  return fetch(`${API_HOST}/sys/backtests/6315/charts`, {
     method: 'GET',
     headers: {
+      'Accept': '*/*',
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + localStorage.getItem('auth_token')
     }
   })
-    .then(response => response.json())
-    .catch(error => {
-      throw (error);
+    .then(response => {
+      return response.json();
     })
-};
-
-export const getFormService = () => {
-  return fetch(`${API_HOST}/v1/formData`, {
-    method: 'GET',
-    headers: {
-    }
-  })
-    .then(response => response.json())
-    .catch(error => {
-      throw (error);
-    })
-};
-
-export const submitFormService = (formData) => {
-  return fetch(`${API_HOST}/v1/users`, {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'Accept': '*/*'
-    }
-  })
-    .then(response => response.json())
     .catch(error => {
       throw (error);
     })

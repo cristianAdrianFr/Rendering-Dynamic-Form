@@ -1,10 +1,8 @@
 import {combineReducers} from 'redux';
-import HomePageReducer from './Home';
-import UesrsPageReducer from './Users';
+import LoginReducer from './Login';
 
 const RootReducer = combineReducers({
-  home: HomePageReducer,
-  users: UesrsPageReducer
+  auth: LoginReducer
 });
 
 export default RootReducer;

@@ -7,7 +7,7 @@ class HomeContainer extends Component {
 
   componentWillMount() {
     const {history} = this.props;
-    history.push('/users')
+    history.push('/login')
   }
 
   render() {
@@ -19,12 +19,4 @@ class HomeContainer extends Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return {}
-};
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {}
-};
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(HomeContainer))
+export default withRouter(HomeContainer)
